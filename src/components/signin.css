@@ -1,0 +1,14 @@
+.in-form {
+	max-width: 350px;
+	width: 100%;
+	margin: 0 auto;
+}
+.check-container {
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+}
+.name-container {
+	display: flex;
+	gap: 15px;
+}
