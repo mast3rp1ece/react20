@@ -33,10 +33,9 @@ color: #fff;
 margin: 0 0 20px 0;
 border-radius: 3px;
 box-sizing: border-box;
-border: 1px solid grey;
+border: 1px solid ${(props) => props.className === 'valid' ? 'green' : props.className === 'invalid' ? 'red' : 'gray'};
 &:focus {
 	outline:0;
-	border: 1px solid ${(props) => props.className === 'valid' ? 'green' : props.className === 'invalid' ? 'red' : 'gray'};
 }
 `
 export const CheckBox = styled.input `
@@ -64,6 +63,9 @@ cursor: pointer;
 &:hover {
 	background: grey;
 	color: #fff;
+&:active {
+	transform: translateY(3px) scale(0.99);
+}
 }
 margin-bottom: 15px;
 `

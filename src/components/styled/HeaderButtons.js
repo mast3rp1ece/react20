@@ -17,4 +17,7 @@ border: ${(props) => props.var === 'outline' ? '1px solid rgb(255, 50, 100)' : '
 	color: #fff;
 }
 background: ${(props) => props.var === 'outline' ? 'transparent' : 'rgb(255, 50, 100)'};
+&:active {
+	transform: translateY(3px) scale(0.98);
+}
 `

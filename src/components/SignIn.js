@@ -35,8 +35,8 @@ export const SignIn = () => {
 			</IconContainer>
 			<Title>Sign in</Title>
 			<form action="#" className="in-form" onSubmit={handleSignIn}>
-				<SignInput className={isEmailValid ? 'valid' : 'invalid'} type="email" placeholder="Email Address*" value={email} onChange={(e) => setEmail(e.target.value)} />
-				<SignInput className={isPasswordValid ? 'valid' : 'invalid'} type="password" placeholder="Password*" value={password} onChange={(e) => setPassword(e.target.value)} />
+				<SignInput className={isEmailValid ? 'valid' : (email.length === 0) ? '' : 'invalid'} type="email" placeholder="Email Address*" value={email} onChange={(e) => setEmail(e.target.value)} />
+				<SignInput className={isPasswordValid ? 'valid' : (password.length === 0) ? '0' : 'invalid'} type="password" placeholder="Password*" value={password} onChange={(e) => setPassword(e.target.value)} />
 				<div className="check-container">
 					<CheckBox checked={rememberMe} onChange={(e) => setRememberMe(e.target.checked)} type="checkbox"/>
 					<CheckInfo>Remember me</CheckInfo>

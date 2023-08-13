@@ -42,11 +42,11 @@ export const SignUp = () => {
 			<Title>Sign up</Title>
 			<form action="#" className="in-form" onSubmit={handleSignIn}>
 				<div class="name-container">
-					<SignInput className={isFirstNameValid ? 'valid' : 'invalid'} type="text" placeholder="First Name*" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
-					<SignInput className={isLastNameValid ? 'valid' : 'invalid'} type="text" placeholder="Last Name*" value={lastName} onChange={(e) => setLastName(e.target.value)} />
+					<SignInput className={isFirstNameValid ? 'valid' : (firstName.length === 0) ? '' : 'invalid'} type="text" placeholder="First Name*" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+					<SignInput className={isLastNameValid ? 'valid' : (lastName.length === 0) ? '' : 'invalid'} type="text" placeholder="Last Name*" value={lastName} onChange={(e) => setLastName(e.target.value)} />
 				</div>
-				<SignInput className={isEmailValid ? 'valid' : 'invalid'} type="email" placeholder="Email Address*" value={email} onChange={(e) => setEmail(e.target.value)} />
-				<SignInput className={isPasswordValid ? 'valid' : 'invalid'} type="password" placeholder="Password*" value={password} onChange={(e) => setPassword(e.target.value)} />
+				<SignInput className={isEmailValid ? 'valid' : (email.length === 0) ? '' : 'invalid'} type="email" placeholder="Email Address*" value={email} onChange={(e) => setEmail(e.target.value)} />
+				<SignInput className={isPasswordValid ? 'valid' : (password.length === 0) ? '0' : 'invalid'} type="password" placeholder="Password*" value={password} onChange={(e) => setPassword(e.target.value)} />
 				<div className="check-container">
 					<CheckBox type="checkbox"/>
 					<CheckInfo var='receiveinfo'>I want to receive inspiration, marketing promotions and updates via email</CheckInfo>
