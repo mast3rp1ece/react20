@@ -21,6 +21,15 @@ export const SignUp = () => {
 
 	const handleSignIn= (e) => {
 		e.preventDefault();
+
+		const userData = {
+			email: email,
+			password: password,
+			firstName: firstName,
+			lastName: lastName,
+		};
+		localStorage.setItem('userData', JSON.stringify(userData));
+		console.log(userData);
 	}
 	
 	const isEmailValid = /^[^\s@]{3,}@[^@]{2,}\.[^@]{2,}$/.test(email);

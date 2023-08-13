@@ -43,7 +43,21 @@ export const SignIn = () => {
 			localStorage.setItem('rememberedEmail', email);
 			localStorage.setItem('rememberedPassword', password);
 		}
-	}
+
+		 const storedUserData = localStorage.getItem('userData');
+  		if (storedUserData) {
+		const userData = JSON.parse(storedUserData);
+		if (userData.email && userData.password) {
+			if (userData.email === email && userData.password === password) {
+			alert(`Welcome, ${userData.firstName}! Youre in!`);
+			} else {
+			alert('Wrong data!');
+      	}
+    	} else {
+      alert('Register first!');
+    	}
+  		}
+	};
 
 	const handleRememberMeChange = (e) => {
 		const newValue = e.target.checked;
