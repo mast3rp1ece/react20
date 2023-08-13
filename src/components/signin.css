@@ -12,11 +12,3 @@
 	display: flex;
 	gap: 15px;
 }
-.typed.valid {
-	border-color: green;
-}
- 
-.typed.invalid {
-	border-color: red;
-}
- 
