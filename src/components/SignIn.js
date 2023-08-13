@@ -26,7 +26,7 @@ export const SignIn = () => {
 				<Icon src={icon} alt="Icon" />
 			</IconContainer>
 			<Title>Sign in</Title>
-			<form className="in-form">
+			<form action="#" className="in-form">
 				<SignInput type="email" placeholder="Email Address*" value={email} onChange={(e) => setEmail(e.target.value)} />
 				<SignInput type="password" placeholder="Password*" value={password} onChange={(e) => setPassword(e.target.value)} />
 				<div className="check-container">

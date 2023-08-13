@@ -40,7 +40,6 @@ box-sizing: border-box;
 `
 export const CheckBox = styled.input `
 margin: 0;
-background: rgba(0 0 0 0.08);
 width: 15px;
 height: 15px;
 `
@@ -49,6 +48,7 @@ color: rgb(220, 220, 220);
 font-weight: 400;
 margin-left: 10px;
 font-size: 14px;
+max-width: ${(props) => props.var === 'receiveinfo' ? '250px' : 'auto'}
 `
 export const SignButt = styled.button `
 width: 100%;
@@ -56,6 +56,7 @@ padding: 5px 0;
 font-weight: 600;
 border-radius: 3px;
 border: 0;
+box-shadow: 2px 2px 5px black;
 background: rgb(50, 200, 255);
 transition: all ease .2s;
 cursor: pointer;

@@ -9,6 +9,7 @@ width: 100%;
 text-align: center;
 padding: 7px 0;
 border-radius: 5px;
+box-shadow: 3px 3px 20px black;
 transition: all ease .2s;
 border: ${(props) => props.var === 'outline' ? '1px solid rgb(255, 50, 100)' : 'none'};
 &:hover {

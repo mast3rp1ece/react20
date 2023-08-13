@@ -29,7 +29,7 @@ export const SignUp = () => {
 				<Icon src={icon} alt="Icon" />
 			</IconContainer>
 			<Title>Sign up</Title>
-			<form className="in-form">
+			<form action="#" className="in-form">
 				<div class="name-container">
 					<SignInput type="text" placeholder="First Name*" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
 					<SignInput type="text" placeholder="Last Name*" value={lastName} onChange={(e) => setLastName(e.target.value)} />
@@ -38,7 +38,7 @@ export const SignUp = () => {
 				<SignInput type="password" placeholder="Password*" value={password} onChange={(e) => setPassword(e.target.value)} />
 				<div className="check-container">
 					<CheckBox type="checkbox"/>
-					<CheckInfo>I want to receive inspiration, marketing promotions and updates via email</CheckInfo>
+					<CheckInfo var='receiveinfo'>I want to receive inspiration, marketing promotions and updates via email</CheckInfo>
 				</div>
 				<SignButt>SIGN UP</SignButt>
 				<HelpContainer var='helpend' className="help-links">
