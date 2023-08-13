@@ -19,23 +19,34 @@ export const SignUp = () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 
-	const handleSignIn= () => {
-
+	const handleSignIn= (e) => {
+		e.preventDefault();
 	}
 	
+	const isEmailValid = /^[^\s@]{3,}@[^@]{2,}\.[^@]{2,}$/.test(email);
+	const isPasswordValid = /^(?=.*[a-z])(?=.*[A-Z]).{8,}$/.test(password);
+	const isFirstNameValid = /^[A-Za-z]{3,}$/.test(firstName);
+	const isLastNameValid = /^[A-Za-z]{3,}$/.test(lastName);
+
+	const userData = {
+		email: email,
+		password: password,
+	}
+	localStorage.setItem('userData', JSON.stringify(userData));
+
 	return (
 		<>
 			<IconContainer>
 				<Icon src={icon} alt="Icon" />
 			</IconContainer>
 			<Title>Sign up</Title>
-			<form action="#" className="in-form">
+			<form action="#" className="in-form" onSubmit={handleSignIn}>
 				<div class="name-container">
-					<SignInput type="text" placeholder="First Name*" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
-					<SignInput type="text" placeholder="Last Name*" value={lastName} onChange={(e) => setLastName(e.target.value)} />
+					<SignInput className={isFirstNameValid ? 'valid' : 'invalid'} type="text" placeholder="First Name*" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+					<SignInput className={isLastNameValid ? 'valid' : 'invalid'} type="text" placeholder="Last Name*" value={lastName} onChange={(e) => setLastName(e.target.value)} />
 				</div>
-				<SignInput type="email" placeholder="Email Address*" value={email} onChange={(e) => setEmail(e.target.value)} />
-				<SignInput type="password" placeholder="Password*" value={password} onChange={(e) => setPassword(e.target.value)} />
+				<SignInput className={isEmailValid ? 'valid' : 'invalid'} type="email" placeholder="Email Address*" value={email} onChange={(e) => setEmail(e.target.value)} />
+				<SignInput className={isPasswordValid ? 'valid' : 'invalid'} type="password" placeholder="Password*" value={password} onChange={(e) => setPassword(e.target.value)} />
 				<div className="check-container">
 					<CheckBox type="checkbox"/>
 					<CheckInfo var='receiveinfo'>I want to receive inspiration, marketing promotions and updates via email</CheckInfo>

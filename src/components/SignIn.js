@@ -16,19 +16,28 @@ export const SignIn = () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 
-	const handleSignIn= () => {
-
-	}
 	
+	
+
+	const handleSignIn= (e) => {
+		e.preventDefault();
+	}
+
+
+	const isEmailValid = /^[^\s@]{3,}@[^@]{2,}\.[^@]{2,}$/.test(email);
+	const isPasswordValid = /^(?=.*[a-z])(?=.*[A-Z]).{8,}$/.test(password);
+	
+	
+
 	return (
 		<>
 			<IconContainer>
 				<Icon src={icon} alt="Icon" />
 			</IconContainer>
 			<Title>Sign in</Title>
-			<form action="#" className="in-form">
-				<SignInput type="email" placeholder="Email Address*" value={email} onChange={(e) => setEmail(e.target.value)} />
-				<SignInput type="password" placeholder="Password*" value={password} onChange={(e) => setPassword(e.target.value)} />
+			<form action="#" className="in-form" onSubmit={handleSignIn}>
+				<SignInput className={isEmailValid ? 'valid' : 'invalid'} type="email" placeholder="Email Address*" value={email} onChange={(e) => setEmail(e.target.value)} />
+				<SignInput className={isPasswordValid ? 'valid' : 'invalid'} type="password" placeholder="Password*" value={password} onChange={(e) => setPassword(e.target.value)} />
 				<div className="check-container">
 					<CheckBox type="checkbox"/>
 					<CheckInfo>Remember me</CheckInfo>

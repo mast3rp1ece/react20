@@ -28,14 +28,15 @@ align-items: center;
 export const SignInput = styled.input `
 width: 100%;
 background: transparent;
-border: 1px solid grey;
 padding: 12px 5px;
 color: #fff;
 margin: 0 0 20px 0;
 border-radius: 3px;
 box-sizing: border-box;
+border: 1px solid grey;
 &:focus {
 	outline:0;
+	border: 1px solid ${(props) => props.className === 'valid' ? 'green' : props.className === 'invalid' ? 'red' : 'gray'};
 }
 `
 export const CheckBox = styled.input `
@@ -62,6 +63,7 @@ transition: all ease .2s;
 cursor: pointer;
 &:hover {
 	background: grey;
+	color: #fff;
 }
 margin-bottom: 15px;
 `
