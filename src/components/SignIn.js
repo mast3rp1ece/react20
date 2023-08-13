@@ -15,12 +15,11 @@ import { HelpContainer } from "./styled/SignInStyled";
 export const SignIn = () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
-
-	
-	
+	const [rememberMe, setRememberMe] = useState('');
 
 	const handleSignIn= (e) => {
 		e.preventDefault();
+
 	}
 
 
@@ -39,7 +38,7 @@ export const SignIn = () => {
 				<SignInput className={isEmailValid ? 'valid' : 'invalid'} type="email" placeholder="Email Address*" value={email} onChange={(e) => setEmail(e.target.value)} />
 				<SignInput className={isPasswordValid ? 'valid' : 'invalid'} type="password" placeholder="Password*" value={password} onChange={(e) => setPassword(e.target.value)} />
 				<div className="check-container">
-					<CheckBox type="checkbox"/>
+					<CheckBox checked={rememberMe} onChange={(e) => setRememberMe(e.target.checked)} type="checkbox"/>
 					<CheckInfo>Remember me</CheckInfo>
 				</div>
 				<SignButt>SIGN IN</SignButt>
