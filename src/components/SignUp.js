@@ -22,6 +22,9 @@ export const SignUp = () => {
 	const handleSignIn= (e) => {
 		e.preventDefault();
 
+		if (firstName && lastName && email && password) {
+
+		
 		const userData = {
 			email: email,
 			password: password,
@@ -29,7 +32,10 @@ export const SignUp = () => {
 			lastName: lastName,
 		};
 		localStorage.setItem('userData', JSON.stringify(userData));
-		console.log(userData);
+		alert('Registration successful!');
+		} else {
+			alert('Please fill all fields!');
+		}
 	}
 	
 	const isEmailValid = /^[^\s@]{3,}@[^@]{2,}\.[^@]{2,}$/.test(email);
