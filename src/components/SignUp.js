@@ -63,8 +63,8 @@ export const SignUp = () => {
 				<SignInput className={isEmailValid ? 'valid' : (email.length === 0) ? '' : 'invalid'} type="email" placeholder="Email Address*" value={email} onChange={(e) => setEmail(e.target.value)} />
 				<SignInput className={isPasswordValid ? 'valid' : (password.length === 0) ? '0' : 'invalid'} type="password" placeholder="Password*" value={password} onChange={(e) => setPassword(e.target.value)} />
 				<div className="check-container">
-					<CheckBox type="checkbox"/>
-					<CheckInfo var='receiveinfo'>I want to receive inspiration, marketing promotions and updates via email</CheckInfo>
+					<CheckBox id="check" type="checkbox"/>
+					<CheckInfo for ="check" var='receiveinfo'>I want to receive inspiration, marketing promotions and updates via email</CheckInfo>
 				</div>
 				<SignButt>SIGN UP</SignButt>
 				<HelpContainer var='helpend' className="help-links">

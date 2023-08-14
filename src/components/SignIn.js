@@ -49,7 +49,7 @@ export const SignIn = () => {
 		const userData = JSON.parse(storedUserData);
 		if (userData.email && userData.password) {
 			if (userData.email === email && userData.password === password) {
-			alert(`Welcome, ${userData.firstName}! Youre in!`);
+			alert(`Welcome, ${userData.firstName}! You're in!`);
 			} else {
 			alert('Wrong data!');
       	}
@@ -85,8 +85,8 @@ export const SignIn = () => {
 				<SignInput className={isEmailValid ? 'valid' : (email.length === 0) ? '' : 'invalid'} type="email" placeholder="Email Address*" value={email} onChange={(e) => setEmail(e.target.value)} />
 				<SignInput className={isPasswordValid ? 'valid' : (password.length === 0) ? '0' : 'invalid'} type="password" placeholder="Password*" value={password} onChange={(e) => setPassword(e.target.value)} />
 				<div className="check-container">
-					<CheckBox checked={rememberMe} onChange={handleRememberMeChange} type="checkbox"/>
-					<CheckInfo>Remember me</CheckInfo>
+					<CheckBox id="check" checked={rememberMe} onChange={handleRememberMeChange} type="checkbox"/>
+					<CheckInfo for="check">Remember me</CheckInfo>
 				</div>
 				<SignButt>SIGN IN</SignButt>
 				<HelpContainer className="help-links">

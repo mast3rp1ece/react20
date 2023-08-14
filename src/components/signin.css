@@ -12,3 +12,29 @@
 	display: flex;
 	gap: 15px;
 }
+input[type="checkbox"] {
+	appearance: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid grey;
+	position: relative;
+	border-radius: 1px;
+}
+input[type="checkbox"]::after {
+	content: "";
+	background: url(../img/check.svg) no-repeat;
+	display: block;
+	width: 18px;
+	height: 18px;
+	position: absolute;
+	left: -.5px;
+	top: -1.5px;
+	display: none;
+}
+input[type="checkbox"]:checked::after {
+	display: block;
+}
+input[type="checkbox"]:checked{
+	border: 0;
+}

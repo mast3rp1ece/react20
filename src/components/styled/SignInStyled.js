@@ -43,10 +43,11 @@ margin: 0;
 width: 15px;
 height: 15px;
 `
-export const CheckInfo = styled.span `
+export const CheckInfo = styled.label `
 color: rgb(220, 220, 220);
 font-weight: 400;
 margin-left: 10px;
+cursor: pointer;
 font-size: 14px;
 max-width: ${(props) => props.var === 'receiveinfo' ? '250px' : 'auto'}
 `
